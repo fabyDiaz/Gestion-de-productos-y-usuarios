@@ -1,0 +1,118 @@
+<div class="container-fluid body">
+
+
+<!-- Login Container -->
+<div class="login-container">
+  <!-- Header -->
+  <div class="login-header">Crear Cuenta</div>
+
+  <!-- Form -->
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <!-- Usuario Field -->
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        name="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="usuario.nombre"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="aepllido"
+        name="apellido"
+        placeholder="Apellido"
+        [(ngModel)]="usuario.apellido"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="rut"
+        name="rut"
+        placeholder="Rut"
+        [(ngModel)]="usuario.rut"
+      />
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Correo electrónico"
+        [(ngModel)]="usuario.email"
+      />
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="contrasena"
+        placeholder="Contraseña"
+        [(ngModel)]="usuario.contrasena"
+      />
+    </div>
+
+    <!-- Repeat Password Field -->
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="contrasena2"
+        placeholder="Repite Contraseña"
+        [(ngModel)]="contrasena2"
+      />
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="rememberMe" />
+      <label class="form-check-label" for="rememberMe"
+        >Estoy de acuerdo con las Politicas de privacidad</label
+      >
+    </div>
+
+     @if (contrasenasNoCoinciden) {
+        <div class="text-danger">Las contraseñas no coinciden.</div>
+      } 
+      @if (registroExitoso) {
+        <div class="alert alert-success mt-3">
+          Usuario creado exitosamente.
+        </div>
+      }
+
+    <!-- Login Button -->
+    <button type="submit" class="btn btn-primary btn-login">
+      Crear Cuenta
+    </button>
+  </form>
+
+  <!-- Sign Up Link -->
+  <div class="signup-link">
+    ¿Ya tienes cuenta? <a href="#" style="color: #007bff">Inicia Sesión!</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <span>Copyright © inventarioApp 2025</span>
+  <span
+    ><a href="#" style="color: #333">Politicas de privacidad</a> ·
+    <a href="#" style="color: #333">Terms & Conditions</a></span
+  >
+</div>
+
+</div>

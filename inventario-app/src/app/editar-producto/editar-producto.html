@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="form-container">
+    <div class="text-center">
+      <h3 class="form-title">Editar Producto</h3>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del producto</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" 
+        [(ngModel)]="producto.nombre" placeholder="Ingrese nombre del producto"/>
+      </div>
+      
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción del producto</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" 
+        [(ngModel)]="producto.descripcion" placeholder="Ingrese la descripción del producto"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" step="any" name="precio" 
+        [(ngModel)]="producto.precio" placeholder="0.00" />
+      </div>
+
+      <div class="mb-3">
+        <label for="stock" class="form-label">Existencias</label>
+        <input type="number" class="form-control" id="stock" name="stock"
+        [(ngModel)]="producto.stock" placeholder="Cantidad disponible" />
+      </div>
+
+      <div class="mb-3">
+        <label for="imagen" class="form-label">Ingresar imagen</label>
+        <input class="form-control" type="file" id="imagen" name="imagen" accept="image/*">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Estado del producto</label>
+        <div class="mt-2">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="active" id="activo" 
+                   [value]="true" [(ngModel)]="producto.active">
+            <label class="form-check-label" for="activo">
+              <span class="badge bg-success">Activo</span>
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="active" id="inactivo" 
+                   [value]="false" [(ngModel)]="producto.active">
+            <label class="form-check-label" for="inactivo">
+              <span class="badge bg-secondary">Inactivo</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-actions">
+        <a href="/" class="link-regresar">Regresar</a>
+        <button type="submit" class="btn-login">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

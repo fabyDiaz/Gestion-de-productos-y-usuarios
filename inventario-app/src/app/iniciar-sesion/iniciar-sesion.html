@@ -1,0 +1,50 @@
+ <div class="container-fluid body">
+
+ <!-- Login Container -->
+    <div class="login-container">
+        <!-- Header -->
+        <div class="login-header">Iniciar Sesión</div>
+
+        <!-- Form -->
+        <form (ngSubmit)="login()">
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" placeholder="Ingrese email" [(ngModel)]="email" name = "email" required>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" placeholder="Enter password" [(ngModel)]="contrasena" name="contrasena" required>
+            </div>
+
+
+            <!-- Forgot Password Link -->
+            <a href="#" class="forgot-password">Olvidaste la contraseña?</a>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary btn-login">Ingresar</button>
+
+            @if (error) {
+                <div class="text-danger">{{error}}</div>
+            } 
+        </form>
+
+        <!-- Sign Up Link -->
+        <div class="signup-link">
+           ¿No tienes cuenta? <a href="#" style="color: #007bff;">Registrate!</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <span>Copyright © inventarioApp 2025</span>
+        <span><a href="#" style="color: #333;">Politicas de privacidad</a> · <a href="#" style="color: #333;">Terms & Conditions</a></span>
+    </div>
+
+    <!-- Settings Icon -->
+    <div class="settings-icon">
+        <i class="fas fa-cog"></i>
+    </div>
+ </div>

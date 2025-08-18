@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="form-container">
+    <div class="text-center">
+      <h3 class="form-title">Agregar</h3>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del producto</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" 
+        [(ngModel)]="producto.nombre" placeholder="Ingrese nombre del producto"/>
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción del producto</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" 
+        [(ngModel)]="producto.descripcion" placeholder="Ingrese la descripción del producto"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" step="any" name="precio" 
+        [(ngModel)]="producto.precio" placeholder="0.00" />
+      </div>
+
+      <div class="mb-3">
+        <label for="stock" class="form-label">Existencias</label>
+        <input type="number" class="form-control" id="stock" name="tock"
+        [(ngModel)]="producto.stock" placeholder="Cantidad disponible" />
+      </div>
+
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Ingresar imágen</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+
+      <div class="btn-actions">
+        <a href="/" class="link-regresar">Regresar</a>
+        <button type="submit" class="btn-login">Agregar</button>
+      </div>
+    </form>
+  </div>
+</div>
