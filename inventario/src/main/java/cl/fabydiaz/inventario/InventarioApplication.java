@@ -9,11 +9,7 @@ public class InventarioApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InventarioApplication.class, args);
-		//prueba de lombok
-		Producto producto = new Producto();
-		producto.setDescripcion("Camisa M");
-		producto.setPrecio(600.0);
-		producto.setStock(30);
+
 	}
 
 }

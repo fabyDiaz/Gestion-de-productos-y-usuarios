@@ -33,7 +33,8 @@ public class ProductoServicio implements IProductoServicio{
         Usuario usuario = usuarioRepositorio.findByEmailAndActiveTrue(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
-        List<Producto> productos = productoRepositorio.findByUsuarioIdUsuario(usuario.getIdUsuario());
+        //List<Producto> productos = productoRepositorio.findByUsuarioIdUsuario(usuario.getIdUsuario());
+        List<Producto> productos = productoRepositorio.findByUsuarioIdUsuarioAndActiveTrue(usuario.getIdUsuario());
 
         return productos.stream().map(producto ->
                 productobuild(producto)).collect(Collectors.toList());

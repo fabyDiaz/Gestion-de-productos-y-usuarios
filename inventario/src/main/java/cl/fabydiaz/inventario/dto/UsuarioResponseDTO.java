@@ -15,6 +15,5 @@ public class UsuarioResponseDTO {
     private String apellido;
     private String rut;
     private String email;
-    private String contrasena;
     private boolean active;
 }

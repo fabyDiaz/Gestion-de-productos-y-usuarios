@@ -11,6 +11,7 @@ public interface ProductoRespositorio extends JpaRepository<Producto, Integer> {
     @Override
     Optional<Producto> findById(Integer integer);
     List<Producto> findByUsuarioIdUsuario(Integer idUsuario);
-    List<Producto>findAllByActiveTrue();
+    //List<Producto> findAllByActiveTrue();
+    List<Producto> findByUsuarioIdUsuarioAndActiveTrue(Integer idUsuario);
 }
 

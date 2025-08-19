@@ -11,17 +11,17 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-   // private static final String SECRET_KEY = "clave-super-secreta-para-jwt-2025-segura!"; // al menos 32 caracteres
-   // private static final long EXPIRATION_TIME = 1000 * 60 * 60 * 10; // 10 horas
+   private static final String SECRET_KEY = "clave-super-secreta-para-jwt-2025-segura!"; // al menos 32 caracteres
+   private static final long EXPIRATION_TIME = 1000 * 60 * 60 * 10; // 10 horas
 
-    private final String SECRET_KEY;
-    private final long EXPIRATION_TIME;
-
+    //private final String SECRET_KEY;
+   // private final long EXPIRATION_TIME;
+/*
     public JwtUtil(EnvLoader envLoader) {
         this.SECRET_KEY = envLoader.get("JWT_SECRET");
         this.EXPIRATION_TIME = Long.parseLong(envLoader.get("JWT_EXPIRATION"));
     }
-
+*/
     private Algorithm getAlgorithm() {
         return Algorithm.HMAC256(SECRET_KEY);
     }
