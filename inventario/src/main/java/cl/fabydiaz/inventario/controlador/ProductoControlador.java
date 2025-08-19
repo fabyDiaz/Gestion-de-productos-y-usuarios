@@ -21,9 +21,9 @@ import java.util.Map;
 public class ProductoControlador {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductoControlador.class);
+   
     @Autowired
     private ProductoServicio productoServicio;
-
 
     @GetMapping("/productos")
     public ResponseEntity<List<ProductoDTO>> obtenerMisProductos(Authentication authentication) {

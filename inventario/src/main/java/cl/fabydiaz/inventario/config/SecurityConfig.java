@@ -44,7 +44,6 @@ public class SecurityConfig{
                 .headers(headers -> headers.frameOptions(frame -> frame.disable())) // for H2 console
                 .authorizeHttpRequests(http -> {
                     http.requestMatchers("/api/auth/**", "/h2-console/**").permitAll();
-                    http.requestMatchers(HttpMethod.GET, "/api/v1/**").permitAll();
                     http.requestMatchers(HttpMethod.POST, "/api/v1/auth/register").permitAll();
                     http.requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll();
                     http.anyRequest().authenticated();

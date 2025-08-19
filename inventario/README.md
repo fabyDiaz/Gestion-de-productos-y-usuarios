@@ -32,3 +32,19 @@ variables de entorno (por ejemplo, usando un .env y una clase EnvLoader).
 Variables de entorno:
 • Configurar un archivo .env (en la raíz del proyecto, junto con pom.xml) que contenga las variables
 necesarias
+
+### Anotaciones
+- Se utiliza applications.properties en vez de el archivo .env
+- Y en vez de llamar EnvLoader.java, se usa:
+
+``` java
+    public JwtUtil(
+            @Value("${jwt.secret}") String secretKey,
+            @Value("${jwt.expiration}") long expirationTime) {
+        this.SECRET_KEY = secretKey;
+        this.EXPIRATION_TIME = expirationTime;
+    }
+```
+
+- Puerto por defecto: 8080
+- La colección de rutas usadas se encuentra en [Ver la documentación](./assets/inventario-app.postman_collection.json)
